@@ -35,6 +35,8 @@ spec:
           spec:
             description: DevPodSpec defines the desired state of DevPod
             properties:
+              external_domain:
+                type: string
               image:
                 type: string
               port:
@@ -44,6 +46,7 @@ spec:
                 format: int32
                 type: integer
             required:
+            - external_domain
             - replicas
             type: object
           status:
