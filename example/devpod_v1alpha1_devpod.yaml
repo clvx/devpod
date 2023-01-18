@@ -1,0 +1,16 @@
+apiVersion: devpod.bitclvx.com/v1alpha1
+kind: DevPod
+metadata:
+  labels:
+    app.kubernetes.io/name: devpod
+    app.kubernetes.io/instance: devpod-sample
+    app.kubernetes.io/part-of: devpod-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: devpod-operator
+  name: test
+  namespace: devpod
+spec:
+  port: 3000
+  image: "gitpod/openvscode-server:1.74.2"
+  external_domain: "devpod.bitclvx.com"
+  replicas: 1

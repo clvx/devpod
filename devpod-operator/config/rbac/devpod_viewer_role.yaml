@@ -1,0 +1,27 @@
+# permissions for end users to view devpods.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: devpod-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: devpod-operator
+    app.kubernetes.io/part-of: devpod-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: devpod-viewer-role
+rules:
+- apiGroups:
+  - devpod.bitclvx.com
+  resources:
+  - devpods
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - devpod.bitclvx.com
+  resources:
+  - devpods/status
+  verbs:
+  - get
